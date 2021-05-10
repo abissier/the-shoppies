@@ -1,0 +1,201 @@
+:root {
+	--font: 'Roboto', sans-serif;
+}
+
+* {
+	font-family: var(--font);
+}
+/*------------ navbar styling -----------------*/
+nav {
+	display: flex;
+	flex-direction: row;
+	height: 100px;
+	justify-content: space-around;
+}
+
+/* hexagon shapes w info from stack overflow */
+.button {
+	position: relative;
+	display: block;
+	background: transparent;
+	width: 300px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	margin: 1%;
+	font-size: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #cca43b;
+	font-family: var(--font);
+	box-sizing: border-box;
+	border: none;
+}
+
+.button:before,
+.button:after {
+	position: absolute;
+	content: '';
+	width: 300px;
+	left: 15px;
+	height: 34px;
+	z-index: -1;
+}
+
+.button:before {
+	transform: perspective(15px) rotateX(3deg);
+}
+.button:after {
+	top: 40px;
+	transform: perspective(15px) rotateX(-3deg);
+}
+
+/* Button Border Style */
+.button.border:before,
+.button.border:after {
+	border: 4px solid #cca43b;
+}
+.button.border:before {
+	border-bottom: none; /* to prevent the border-line showing up in the middle of the shape */
+}
+.button.border:after {
+	border-top: none; /* to prevent the border-line showing up in the middle of the shape */
+}
+
+/* Button hover styles */
+.button.border:hover:before,
+.button.border:hover:after {
+	background: #cca43b;
+}
+.button.border:hover {
+	color: #fff;
+}
+
+/* -------------------Homepage Page -------------------------------------- */
+main {
+	font-family: var(--font);
+	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2%;
+	border-radius: 5px;
+}
+
+main p {
+	font-size: 10rem;
+	letter-spacing: 3px;
+	font-family: 'Noto Sans JP', sans-serif;
+	margin-top: 0;
+	margin-bottom: 0%;
+}
+
+.about-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font);
+	font-size: 1.5rem;
+	margin-top: 0;
+}
+
+/* ------------------- Movie Card Styling -------------------------- */
+.movie-card-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 2%;
+}
+
+.movie-card {
+	border: 3px dashed black;
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+	font-family: var(--font);
+}
+
+.movie-card-btns {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: 10px;
+}
+
+.movie-card-btns button {
+	background-color: transparent;
+	border: none;
+}
+
+.movie-card-btns button:hover {
+	cursor: pointer;
+}
+
+/* tooltip */
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.movie-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+}
+
+.movie-info img {
+	width: 100%;
+}
+
+.movie-info h1 {
+	font-family: var(--font);
+	font-size: 30px;
+}
+.movie-info p {
+	font-family: var(--font);
+	font-size: 20px;
+}
+
+/* --------------- Search Page Styling --------------- */
+
+input {
+	height: 50px;
+	width: 400px;
+	border: none;
+	border-bottom: 3px solid black;
+	font-size: 30px;
+}
+
+.search-btn {
+	border: none;
+	background-color: transparent;
+	margin-top: 1%;
+}
+
+.search-btn:hover {
+	transform: rotate(20deg);
+}
+
+/* ----- Media Queries ----------- */
