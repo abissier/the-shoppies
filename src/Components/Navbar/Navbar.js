@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom';
+import Logo from '../Logo/Logo';
 
 function Navbar() {
 	return (
-		<div>
-			<Link to="/top5">
-				<button className="link-btn">See my top 5</button>
+		<nav>
+			<Link to="/" style={{ textDecoration: 'none' }}>
+				<button className="button border">{/* <Logo /> */} The Shoppies</button>
 			</Link>
-			<Link to="/search">
-				<button className="link-btn">Search Films</button>
+
+			<Link to="/saved" style={{ textDecoration: 'none' }}>
+				<button className="button border">My top 5</button>
 			</Link>
-		</div>
+			<Link to="/search" style={{ textDecoration: 'none' }}>
+				<button className="button border">Search Films</button>
+			</Link>
+		</nav>
 	);
 }
 
