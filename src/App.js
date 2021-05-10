@@ -12,7 +12,7 @@ function App() {
 			<Router>
 				<div>
 					<Navbar />
-					<Route exact path="/" component={Homepage} />
+					<Route exact path={[ '/', '/the-shoppies/' ]} component={Homepage} />
 					<Route exact path="/search" component={Searchpage} />
 					<Route exact path="/saved" component={Saved} />
 				</div>
