@@ -11,25 +11,37 @@ function Top() {
 		}
 	}, []);
 
+	// delete film from local storage
+	const handleDeleteSaved = (event) => {
+		let movieName = event.target.attributes[3].value;
+		localStorage.removeItem(movieName);
+		window.location.reload();
+	};
+
 	return (
-		<div>
-			<h1>Your top 5</h1>
+		<main>
+			<h1>- Final Cut -</h1>
 			<section className="movie-card-container">
-				{savedMovies.map((movie) => {
-					return (
-						<Card
-							key={movie.title}
-							poster={movie.poster}
-							title={movie.title}
-							releaseDate={movie.released}
-							director={movie.director}
-							actors={movie.actors}
-							plot={movie.plot}
-						/>
-					);
-				})}
+				{savedMovies.length > 0 ? (
+					savedMovies.map((movie) => {
+						return (
+							<Card
+								key={movie.title}
+								poster={movie.poster}
+								title={movie.title}
+								releaseDate={movie.releaseDate}
+								director={movie.director}
+								actors={movie.actors}
+								plot={movie.plot}
+								handleDeleteSaved={handleDeleteSaved}
+							/>
+						);
+					})
+				) : (
+					<h1>No movies saved</h1>
+				)}
 			</section>
-		</div>
+		</main>
 	);
 }
 
