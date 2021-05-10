@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import Logo from '../Logo/Logo';
 
 function Navbar() {
 	return (
 		<nav>
 			<Link to="/" style={{ textDecoration: 'none' }}>
-				<button className="button border">{/* <Logo /> */} The Shoppies</button>
+				<button className="button border">The Shoppies</button>
 			</Link>
 
 			<Link to="/saved" style={{ textDecoration: 'none' }}>
