@@ -15,7 +15,6 @@ function Top() {
 	const handleDeleteSaved = (event) => {
 		let movieName = event.target.attributes[3].value;
 		localStorage.removeItem(movieName);
-		window.location.reload();
 	};
 
 	return (
@@ -38,7 +37,7 @@ function Top() {
 						);
 					})
 				) : (
-					<h1>No movies saved</h1>
+					<h1>No films made the cut, search films to get started</h1>
 				)}
 			</section>
 		</main>

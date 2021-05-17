@@ -9,6 +9,7 @@ function Search() {
 	// grab valid query from form and send to search movies function
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
+		console.log(query);
 		if (query === '' || query.trim() === '') {
 			alert('Please enter a valid movie title');
 		} else {
