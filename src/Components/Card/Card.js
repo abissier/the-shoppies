@@ -21,44 +21,52 @@ function Card({ poster, title, director, releaseDate, result, handleDelete, hand
 				releaseDate: movieObject[0].Released
 			};
 			localStorage.setItem(movieTitle, JSON.stringify(storeMovie));
+			handleDelete(event);
+			notifyUser(event);
 		}
 	}
 
+	function notifyUser(event) {
+		alert(event.target.attributes[3].value + ' was successfully saved!');
+	}
+
 	return (
-		<article className="movie-card">
-			<div className="movie-info">
-				<img src={poster} alt={title} />
-				<h1>{title}</h1>
-				<p>Released {releaseDate}</p>
-				<p>Directed by: {director}</p>
-			</div>
-			<div className="movie-card-btns">
-				<div className="tooltip">
-					<button>
-						<img
-							src="https://img.icons8.com/dotty/80/000000/delete-ticket.png"
-							alt="delete movie ticket"
-							height="40px"
-							value={title}
-							onClick={handleDelete || handleDeleteSaved}
-						/>
-					</button>
-					<span className="tooltiptext">Remove Film</span>
+		<div>
+			<article className="movie-card">
+				<div className="movie-info">
+					<img src={poster} alt={title} />
+					<h1>{title}</h1>
+					<p>Released {releaseDate}</p>
+					<p>Directed by: {director}</p>
 				</div>
-				<div className="tooltip">
-					<button className="save-btn">
-						<img
-							src="https://img.icons8.com/dotty/80/000000/add-ticket.png"
-							alt="save movie ticket"
-							height="40px"
-							value={title}
-							onClick={handleSave}
-						/>{' '}
-					</button>
-					<span className="tooltiptext">Save Film</span>
+				<div className="movie-card-btns">
+					<div className="tooltip">
+						<button>
+							<img
+								src="https://img.icons8.com/dotty/80/000000/delete-ticket.png"
+								alt="delete movie ticket"
+								height="40px"
+								value={title}
+								onClick={handleDelete || handleDeleteSaved}
+							/>
+						</button>
+						<span className="tooltiptext">Remove Film</span>
+					</div>
+					<div className="tooltip">
+						<button className="save-btn">
+							<img
+								src="https://img.icons8.com/dotty/80/000000/add-ticket.png"
+								alt="save movie ticket"
+								height="40px"
+								value={title}
+								onClick={handleSave}
+							/>{' '}
+						</button>
+						<span className="tooltiptext">Save Film</span>
+					</div>
 				</div>
-			</div>
-		</article>
+			</article>
+		</div>
 	);
 }
 

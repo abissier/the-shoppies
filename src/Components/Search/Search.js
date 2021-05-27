@@ -9,7 +9,6 @@ function Search() {
 	// grab valid query from form and send to search movies function
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
-		console.log(query);
 		if (query === '' || query.trim() === '') {
 			alert('Please enter a valid movie title');
 		} else {
@@ -19,7 +18,7 @@ function Search() {
 
 	// send query to API
 	const searchMovies = (query) => {
-		API.search(query).then((res) => setResult([ ...result, res.data ])).catch((err) => console.log(err));
+		API.search(query).then((res) => setResult([ ...result, res.data ]));
 	};
 
 	// delete item from results
