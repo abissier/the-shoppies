@@ -20,7 +20,7 @@ Javascript, React, OMDB API
 <a href="https://ibb.co/tX92272"><img src="https://i.ibb.co/wsfQQ9Q/screencapture-localhost-3000-2021-05-09-22-01-09-1.png" alt="screencapture-localhost-3000-2021-05-09-22-01-09-1" border="0"></a>
 
 ### Project Link
- https://the-shoppies-1.herokuapp.com/
+https://abissier.github.io/the-shoppies/
 
 ### Contact 
 Questions? 
